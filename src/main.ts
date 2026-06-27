@@ -65,7 +65,11 @@ function renderNavigation(): void {
   nav.innerHTML = `
     <div class="nav__inner">
       <a href="#" class="nav__logo">
-        <img src="/logo.png" alt="Logo" class="nav__logo-img" />
+        <img src="/logo-icon.png" alt="Logo" class="nav__logo-img" />
+        <div>
+          <span class="nav__logo-text">Aesthetic Cloth</span>
+          <span class="nav__logo-sub">Boutique</span>
+        </div>
       </a>
       <div class="nav__links">
         <a href="#home" class="nav__link" id="nav-home">Home</a>
