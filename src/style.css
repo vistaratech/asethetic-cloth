@@ -284,10 +284,18 @@ ul, ol {
   width: 100%;
 }
 
+.nav__ctas {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .nav__cta {
-  background: var(--primary);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
   color: var(--white);
-  padding: 10px 24px;
+  padding: 10px 20px;
   border-radius: 50px;
   font-size: 0.82rem;
   font-weight: 500;
@@ -295,10 +303,24 @@ ul, ol {
   transition: all 0.3s var(--ease-out);
 }
 
-.nav__cta:hover {
+.nav__cta--instagram {
+  background: var(--primary);
+}
+
+.nav__cta--instagram:hover {
   background: var(--primary-dark);
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(14, 107, 94, 0.3);
+}
+
+.nav__cta--whatsapp {
+  background: #128C7E; /* WhatsApp official teal green */
+}
+
+.nav__cta--whatsapp:hover {
+  background: #075E54;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(18, 140, 126, 0.35);
 }
 
 .nav__hamburger {

@@ -77,9 +77,14 @@ function renderNavigation(): void {
         <a href="#about" class="nav__link" id="nav-about">About</a>
         <a href="#services" class="nav__link" id="nav-services">Services</a>
         <a href="#testimonials" class="nav__link" id="nav-testimonials">Reviews</a>
-        <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener" class="nav__cta" id="nav-cta" data-magnetic>
-          ${icons.instagram(16)} Follow Us
-        </a>
+        <div class="nav__ctas">
+          <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener" class="nav__cta nav__cta--instagram" id="nav-cta-instagram" data-magnetic>
+            ${icons.instagram(16)} Follow Us
+          </a>
+          <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="nav__cta nav__cta--whatsapp" id="nav-cta-whatsapp" data-magnetic>
+            ${icons.messageCircle(16)} WhatsApp
+          </a>
+        </div>
       </div>
       <button class="nav__hamburger" id="nav-hamburger" aria-label="Toggle menu">
         <span></span>
@@ -102,6 +107,9 @@ function renderNavigation(): void {
     <a href="#testimonials" class="nav__mobile-link">Reviews</a>
     <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener" class="nav__mobile-link" style="color: var(--primary)">
       ${icons.instagram(20)} Instagram
+    </a>
+    <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="nav__mobile-link" style="color: #128C7E">
+      ${icons.messageCircle(20)} WhatsApp
     </a>
   `;
   app.appendChild(mobileNav);
