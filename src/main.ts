@@ -530,7 +530,7 @@ function renderFooter(): void {
           <h4 class="footer__heading">Connect</h4>
           <a href="${INSTAGRAM_URL}" target="_blank" class="footer__link footer__link--icon">${icons.instagram(14)} Instagram</a>
           <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="footer__link footer__link--icon">${icons.messageCircle(14)} WhatsApp</a>
-          <a href="#" class="footer__link footer__link--icon">${icons.mail(14)} Email Us</a>
+          <a href="mailto:aesthetic12clothing@gmail.com" class="footer__link footer__link--icon">${icons.mail(14)} aesthetic12clothing@gmail.com</a>
           <a href="https://maps.google.com/?q=Avinashi,Tiruppur" target="_blank" rel="noopener" class="footer__link footer__link--icon">${icons.mapPin(14)} Avinashi, Tiruppur</a>
         </div>
       </div>
