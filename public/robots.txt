@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://asethetic-cloth.vercel.app/sitemap.xml
