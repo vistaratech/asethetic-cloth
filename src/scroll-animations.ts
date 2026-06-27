@@ -6,11 +6,6 @@ import './scroll-animations.css';
 
 
 // ---------- Types ----------
-interface ScrollAnimationOptions {
-  threshold?: number;
-  rootMargin?: string;
-  once?: boolean;
-}
 
 // ---------- Scroll Progress Bar ----------
 export function initScrollProgressBar(): void {
