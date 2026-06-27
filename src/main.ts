@@ -260,7 +260,7 @@ function renderCategories(): void {
     <div class="container">
       <div class="categories__header">
         <span class="section-label" data-scroll="fade-up">Our Collections</span>
-        <h2 class="section-title" data-text-reveal>Curated With Love & Crafted With Passion</h2>
+        <h2 class="section-title" data-scroll="fade-up" data-scroll-delay="100">Curated With Love & Crafted With Passion</h2>
         <p class="section-subtitle" data-scroll="fade-up" data-scroll-delay="200">
           From everyday elegance to special occasion grandeur — discover our handpicked collections.
         </p>
@@ -304,7 +304,7 @@ function renderAbout(): void {
         </div>
         <div class="about__text">
           <span class="section-label" data-scroll="fade-up">About Us</span>
-          <h2 class="section-title" data-text-reveal>The Art of Indian Elegance</h2>
+          <h2 class="section-title" data-scroll="fade-up" data-scroll-delay="100">The Art of Indian Elegance</h2>
           <p class="about__description" data-scroll="fade-up" data-scroll-delay="200">
             At Aesthetic Cloth Boutique, every stitch tells a story. We specialize in creating
             and curating the finest Indian ethnic wear — from intricate aari work blouses to
@@ -379,7 +379,7 @@ function renderServices(): void {
     <div class="container">
       <div class="services__header">
         <span class="section-label" data-scroll="fade-up">What We Offer</span>
-        <h2 class="section-title" data-text-reveal>Craftsmanship at Every Step</h2>
+        <h2 class="section-title" data-scroll="fade-up" data-scroll-delay="100">Craftsmanship at Every Step</h2>
         <p class="section-subtitle" data-scroll="fade-up" data-scroll-delay="200">
           From fabric to finish — we bring your ethnic fashion dreams to life.
         </p>
@@ -445,7 +445,7 @@ function renderTestimonials(): void {
     <div class="container">
       <div class="testimonials__header">
         <span class="section-label" data-scroll="fade-up">Customer Love</span>
-        <h2 class="section-title" data-text-reveal style="color: var(--white)">What Our Customers Say</h2>
+        <h2 class="section-title" data-scroll="fade-up" data-scroll-delay="100" style="color: var(--white)">What Our Customers Say</h2>
       </div>
       <div class="testimonials__grid" data-stagger="180">
         ${testimonials.map((t) => `
@@ -479,7 +479,7 @@ function renderCTA(): void {
         <div class="cta__pattern"></div>
         <div class="cta__content">
           <div class="cta__icon" data-scroll="zoom-in">${icons.sparkles(48)}</div>
-          <h2 class="cta__title" data-text-reveal>
+          <h2 class="cta__title" data-scroll="fade-up" data-scroll-delay="100">
             Follow Us for Daily Drops
           </h2>
           <p class="cta__desc" data-scroll="fade-up" data-scroll-delay="200">
