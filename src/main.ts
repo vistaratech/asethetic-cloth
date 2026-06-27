@@ -511,7 +511,7 @@ function renderFooter(): void {
       <div class="footer__top" data-scroll="fade-up">
         <div>
           <div class="footer__brand-logo">
-            <img src="/logo.png" alt="Logo" />
+            <img src="/logo-icon.png" alt="Logo" />
           </div>
           <h3 class="footer__brand-name">Aesthetic Cloth Boutique</h3>
           <p class="footer__brand-desc">
