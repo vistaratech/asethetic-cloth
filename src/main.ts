@@ -21,8 +21,6 @@ function initApp(): void {
   renderTestimonials();
   renderCTA();
   renderFooter();
-  renderBookingModal();
-  renderFloatingWhatsApp();
 
   // Initialize interactions after render
   requestAnimationFrame(() => {
@@ -30,7 +28,6 @@ function initApp(): void {
     initMobileNav();
     initCountUpAnimation();
     initAllScrollAnimations();
-    initBookingModal();
     hidePreloader();
   });
 }
@@ -609,111 +606,6 @@ function animateCount(el: HTMLElement, target: number): void {
   }
 
   requestAnimationFrame(update);
-}
-
-// ---------- Booking Modal ----------
-function renderBookingModal(): void {
-  const modal = document.createElement('div');
-  modal.className = 'modal';
-  modal.id = 'booking-modal';
-  modal.innerHTML = `
-    <div class="modal__backdrop" id="modal-backdrop"></div>
-    <div class="modal__content">
-      <button class="modal__close" id="modal-close" aria-label="Close modal">&times;</button>
-      <h3 class="modal__title">Custom Order Inquiry</h3>
-      <p class="modal__subtitle">Tell us what you'd like to create, and we'll connect on WhatsApp to finalize details!</p>
-      <form class="modal__form" id="booking-form">
-        <div class="form-group">
-          <label for="booking-name">Your Name</label>
-          <input type="text" id="booking-name" required placeholder="Enter your name" />
-        </div>
-        <div class="form-group">
-          <label for="booking-service">Service Needed</label>
-          <select id="booking-service" required>
-            <option value="" disabled selected>Select a service</option>
-            <option value="Aari Work Blouse">Aari Work Blouse (Custom Design)</option>
-            <option value="Custom Kurti">Custom Kurti / Suit</option>
-            <option value="Maxi Dress">Maxi Dress / Gown</option>
-            <option value="Designer Embroidery">Designer Embroidery Works</option>
-            <option value="Co-ords Set">Co-ords Set</option>
-            <option value="Other Custom Outfit">Other Custom Outfit</option>
-          </select>
-        </div>
-        <div class="form-group">
-          <label for="booking-details">Design / Style Details (Optional)</label>
-          <textarea id="booking-details" rows="3" placeholder="Describe your design, patterns, or requirements..."></textarea>
-        </div>
-        <button type="submit" class="btn-primary modal__submit">
-          Send Details via WhatsApp
-        </button>
-      </form>
-    </div>
-  `;
-  document.body.appendChild(modal);
-}
-
-function renderFloatingWhatsApp(): void {
-  const btn = document.createElement('button');
-  btn.className = 'floating-whatsapp';
-  btn.id = 'floating-whatsapp-btn';
-  btn.ariaLabel = 'WhatsApp Chat';
-  btn.innerHTML = icons.messageCircle(28);
-  document.body.appendChild(btn);
-}
-
-function initBookingModal(): void {
-  const modal = document.getElementById('booking-modal');
-  const closeBtn = document.getElementById('modal-close');
-  const backdrop = document.getElementById('modal-backdrop');
-  const form = document.getElementById('booking-form') as HTMLFormElement;
-
-  if (!modal || !closeBtn || !backdrop || !form) return;
-
-  function openModal(e: Event): void {
-    e.preventDefault();
-    modal!.classList.add('active');
-    document.body.style.overflow = 'hidden';
-  }
-
-  function closeModal(): void {
-    modal!.classList.remove('active');
-    document.body.style.overflow = '';
-  }
-
-  // Bind to all WhatsApp buttons
-  const wButtons = [
-    document.getElementById('nav-cta-whatsapp'),
-    document.getElementById('cta-whatsapp'),
-    document.getElementById('floating-whatsapp-btn')
-  ];
-
-  wButtons.forEach(btn => {
-    if (btn) {
-      btn.addEventListener('click', openModal);
-    }
-  });
-
-  closeBtn.addEventListener('click', closeModal);
-  backdrop.addEventListener('click', closeModal);
-
-  form.addEventListener('submit', (e: Event) => {
-    e.preventDefault();
-    const name = (document.getElementById('booking-name') as HTMLInputElement).value;
-    const service = (document.getElementById('booking-service') as HTMLSelectElement).value;
-    const details = (document.getElementById('booking-details') as HTMLTextAreaElement).value;
-
-    const messageText = `Hi Aesthetic Cloth! I would like to place a custom order inquiry:
-- *Name*: ${name}
-- *Service*: ${service}
-${details ? `- *Details*: ${details}` : ''}`;
-
-    const encodedText = encodeURIComponent(messageText);
-    const waLink = `https://wa.me/919361608127?text=${encodedText}`;
-
-    window.open(waLink, '_blank', 'noopener,noreferrer');
-    closeModal();
-    form.reset();
-  });
 }
 
 // ---------- Initialize ----------
