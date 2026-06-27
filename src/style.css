@@ -614,6 +614,13 @@ ul, ol {
   animation-duration: 45s;
 }
 
+.hero__logo-ring:nth-child(4) {
+  inset: -110px;
+  border-color: rgba(14, 107, 94, 0.02);
+  animation-direction: reverse;
+  animation-duration: 55s;
+}
+
 .hero__ring-icon {
   position: absolute;
   top: -12px;
