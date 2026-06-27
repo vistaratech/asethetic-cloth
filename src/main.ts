@@ -156,7 +156,7 @@ function renderHero(): void {
       <div class="hero__text">
         <div class="hero__badge">
           <span class="hero__badge-dot"></span>
-          Now Accepting Orders
+          Now Accepting Orders | Avinashi, Tiruppur
         </div>
         <h1 class="hero__title">
           Where <span class="hero__title-accent">Tradition</span> Meets
@@ -176,8 +176,8 @@ function renderHero(): void {
         </div>
         <div class="hero__stats">
           <div class="hero__stat">
-            <span class="hero__stat-number" data-count="2968">0</span>
-            <span class="hero__stat-label">Happy Customers</span>
+            <span class="hero__stat-number" data-count="2966">0</span>
+            <span class="hero__stat-label">Followers Trust Us</span>
           </div>
           <div class="hero__stat">
             <span class="hero__stat-number" data-count="55">0</span>
@@ -290,7 +290,7 @@ function renderAbout(): void {
             <img src="/logo.png" alt="Aesthetic Cloth Boutique" />
           </div>
           <div class="about__accent-box" data-scroll="zoom-in" data-scroll-delay="400">
-            <span class="about__accent-number">2968+</span>
+            <span class="about__accent-number">2966+</span>
             <span class="about__accent-label">Followers Trust Us</span>
           </div>
         </div>
@@ -531,7 +531,7 @@ function renderFooter(): void {
           <a href="${INSTAGRAM_URL}" target="_blank" class="footer__link footer__link--icon">${icons.instagram(14)} Instagram</a>
           <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="footer__link footer__link--icon">${icons.messageCircle(14)} WhatsApp</a>
           <a href="#" class="footer__link footer__link--icon">${icons.mail(14)} Email Us</a>
-          <a href="#" class="footer__link footer__link--icon">${icons.mapPin(14)} Location</a>
+          <a href="https://maps.google.com/?q=Avinashi,Tiruppur" target="_blank" rel="noopener" class="footer__link footer__link--icon">${icons.mapPin(14)} Avinashi, Tiruppur</a>
         </div>
       </div>
       <div class="footer__bottom">
