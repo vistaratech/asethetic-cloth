@@ -39,9 +39,9 @@ function renderPreloader(): void {
   preloader.id = 'preloader';
   preloader.innerHTML = `
     <div class="preloader__logo">
-      <img src="/logo.png" alt="Aesthetic Cloth Boutique" />
+      <img src="/logo-icon.png" alt="Aesthetic Cloth Boutique" />
     </div>
-    <p class="preloader__text">Aesthetic Cloth</p>
+    <p class="preloader__text">Aesthetic Cloth Boutique</p>
   `;
   document.body.prepend(preloader);
 }
