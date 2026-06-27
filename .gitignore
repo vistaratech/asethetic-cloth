@@ -1,0 +1,21 @@
+# Node dependencies
+**/node_modules/
+**/dist/
+**/dist-ssr/
+
+# Logs
+*.log
+**/logs/
+
+# IDEs
+.idea/
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS files
+.DS_Store
+Thumbs.db

@@ -1,0 +1,549 @@
+/* ===================================================
+   SCROLL ANIMATIONS — CSS
+   Premium scroll-driven animation styles
+   =================================================== */
+
+/* ---------- Scroll Progress Bar ---------- */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  z-index: 10000;
+  background: transparent;
+}
+
+.scroll-progress__fill {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, var(--primary), var(--primary-light), var(--gold));
+  border-radius: 0 2px 2px 0;
+  transition: width 0.05s linear;
+  box-shadow: 0 0 10px rgba(14, 107, 94, 0.4);
+}
+
+/* ---------- Directional Scroll Reveals ---------- */
+[data-scroll] {
+  opacity: 0;
+  transition: opacity 0.8s cubic-bezier(0.33, 1, 0.68, 1),
+              transform 0.8s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: opacity, transform;
+}
+
+[data-scroll="fade-up"] {
+  transform: translateY(50px);
+}
+
+[data-scroll="fade-down"] {
+  transform: translateY(-50px);
+}
+
+[data-scroll="fade-left"] {
+  transform: translateX(60px);
+}
+
+[data-scroll="fade-right"] {
+  transform: translateX(-60px);
+}
+
+[data-scroll="zoom-in"] {
+  transform: scale(0.85);
+}
+
+[data-scroll="zoom-out"] {
+  transform: scale(1.15);
+}
+
+[data-scroll="flip-up"] {
+  transform: perspective(800px) rotateX(15deg) translateY(40px);
+}
+
+[data-scroll="rotate-in"] {
+  transform: rotate(-8deg) scale(0.9);
+}
+
+/* Visible state */
+[data-scroll].is-visible {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Stagger Card Animations ---------- */
+.stagger-item {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: opacity 0.6s cubic-bezier(0.33, 1, 0.68, 1),
+              transform 0.6s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: opacity, transform;
+}
+
+.stagger-item.stagger-visible {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+/* ---------- Text Reveal Animation ---------- */
+.word-wrap {
+  display: inline-block;
+  overflow: hidden;
+  vertical-align: bottom;
+  padding-bottom: 4px;
+}
+
+.word {
+  display: inline-block;
+  transform: translateY(110%);
+  transition: transform 0.7s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: transform;
+}
+
+.text-revealed .word {
+  transform: translateY(0);
+}
+
+/* Make text reveal work well with existing title styles */
+[data-text-reveal] {
+  overflow: visible;
+}
+
+[data-text-reveal].section-title,
+[data-text-reveal].hero__title,
+[data-text-reveal].cta__title {
+  line-height: 1.3;
+}
+
+/* ---------- Section Scale Reveal ---------- */
+[data-scale-reveal] {
+  opacity: 0;
+  transform: scale(0.92);
+  transition: opacity 0.9s cubic-bezier(0.33, 1, 0.68, 1),
+              transform 0.9s cubic-bezier(0.33, 1, 0.68, 1);
+  will-change: opacity, transform;
+}
+
+[data-scale-reveal].scale-visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ---------- Active Nav Link ---------- */
+.nav__link--active {
+  color: var(--primary) !important;
+}
+
+.nav__link--active::after {
+  width: 100% !important;
+}
+
+/* ---------- Tilt Effect Override ---------- */
+[data-tilt] {
+  transition: transform 0.15s ease-out, box-shadow 0.3s ease;
+}
+
+[data-tilt]:hover {
+  box-shadow: 0 25px 50px rgba(14, 107, 94, 0.12);
+}
+
+/* ---------- Magnetic Button ---------- */
+[data-magnetic] {
+  transition: transform 0.15s ease-out;
+}
+
+/* ---------- Cursor Glow ---------- */
+.cursor-glow {
+  position: fixed;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: radial-gradient(
+    circle,
+    rgba(14, 107, 94, 0.06) 0%,
+    rgba(14, 107, 94, 0.02) 40%,
+    transparent 70%
+  );
+  pointer-events: none;
+  z-index: 9998;
+  transform: translate(-50%, -50%);
+  mix-blend-mode: normal;
+  will-change: left, top;
+}
+
+/* Hide cursor glow on mobile */
+@media (pointer: coarse) {
+  .cursor-glow {
+    display: none !important;
+  }
+}
+
+/* ---------- Smooth Section Transitions ---------- */
+.hero,
+.categories,
+.about,
+.services,
+.testimonials,
+.cta {
+  position: relative;
+}
+
+/* Override old reveal class since we now use data-scroll */
+.reveal {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- Enhanced Hover Micro-animations ---------- */
+.category-card {
+  transition: transform 0.15s ease-out, box-shadow 0.4s var(--ease-out);
+}
+
+.service-card {
+  transition: transform 0.15s ease-out, box-shadow 0.4s var(--ease-out),
+              border-color 0.4s var(--ease-out);
+}
+
+.testimonial-card {
+  transition: transform 0.4s var(--ease-out), background 0.4s var(--ease-out);
+}
+
+/* ---------- Parallax Float Elements Enhanced ---------- */
+.hero__float-element {
+  transition: none;
+  will-change: transform;
+}
+
+.hero__text,
+.hero__visual {
+  will-change: transform, opacity;
+  transition: none;
+}
+
+.hero__logo-img {
+  will-change: transform;
+  transition: none;
+}
+
+/* Override hero animations since we use scroll-based parallax now */
+.hero__text {
+  opacity: 1;
+  animation: none;
+}
+
+.hero__visual {
+  opacity: 1;
+  animation: none;
+}
+
+.hero__stats {
+  opacity: 1;
+  animation: none;
+}
+
+/* Initial entrance animation for hero (runs once on load) */
+@keyframes heroEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero__text {
+  animation: heroEntrance 1s cubic-bezier(0.33, 1, 0.68, 1) 1.8s both;
+}
+
+.hero__visual {
+  animation: heroEntrance 1s cubic-bezier(0.33, 1, 0.68, 1) 2.1s both;
+}
+
+.hero__stats {
+  animation: heroEntrance 1s cubic-bezier(0.33, 1, 0.68, 1) 2.4s both;
+}
+
+/* ---------- Custom Thread & Needle Cursor CSS ---------- */
+@media (pointer: fine) {
+  /* Hide standard cursor globally */
+  body, 
+  a, 
+  button, 
+  [role="button"], 
+  input, 
+  select, 
+  textarea,
+  .category-card,
+  .service-card {
+    cursor: none !important;
+  }
+
+  /* Custom Cursor Wrapper */
+  .thread-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 32px;
+    height: 32px;
+    z-index: 10000;
+    pointer-events: none;
+    transform: translate(-50%, -50%);
+    will-change: left, top, transform;
+    display: block;
+    /* Soft breathing glow animation */
+    animation: scissorsGlow 2s ease-in-out infinite;
+  }
+
+  /* SVG Scissors Styling */
+  .scissors-svg {
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+    transition: transform 0.15s ease-out;
+  }
+
+  /* Scissors Blades */
+  .scissors-blade {
+    transform-origin: 16px 16px; /* Rotate around center screw pivot */
+    transition: transform 0.15s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  }
+
+  /* Default Open State */
+  .blade-left {
+    transform: rotate(-12deg);
+  }
+
+  .blade-right {
+    transform: rotate(12deg);
+  }
+
+  /* Snipping cutting animation when moving */
+  .thread-cursor.moving:not(.stitching) .blade-left {
+    animation: moveSnipLeft 0.22s ease-in-out infinite alternate;
+  }
+
+  .thread-cursor.moving:not(.stitching) .blade-right {
+    animation: moveSnipRight 0.22s ease-in-out infinite alternate;
+  }
+
+  /* Snip Animation (Closed State on Click) */
+  .thread-cursor.stitching .blade-left {
+    transform: rotate(2deg) !important;
+    animation: none !important;
+  }
+
+  .thread-cursor.stitching .blade-right {
+    transform: rotate(-2deg) !important;
+    animation: none !important;
+  }
+
+  .thread-cursor.stitching .scissors-svg {
+    transform: scale(0.8);
+  }
+
+  /* Keyframe animations for moving cutting snip */
+  @keyframes moveSnipLeft {
+    0% { transform: rotate(-12deg); }
+    100% { transform: rotate(-1deg); }
+  }
+
+  @keyframes moveSnipRight {
+    0% { transform: rotate(12deg); }
+    100% { transform: rotate(1deg); }
+  }
+
+  /* Hover State (over links/buttons) */
+  .thread-cursor.hovered {
+    animation: none; /* override default glow */
+  }
+
+  .thread-cursor.hovered .scissors-svg {
+    transform: scale(1.25);
+    animation: scissorsHoverGlow 1.2s ease-in-out infinite;
+  }
+  
+  .thread-cursor.hovered .scissors-blade circle,
+  .thread-cursor.hovered .scissors-blade path {
+    stroke: var(--gold) !important;
+  }
+
+  /* Keyframe animations for light pulse */
+  @keyframes scissorsGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 2px rgba(14, 107, 94, 0.35));
+    }
+    50% {
+      filter: drop-shadow(0 0 9px rgba(14, 107, 94, 0.8));
+    }
+  }
+
+  @keyframes scissorsHoverGlow {
+    0%, 100% {
+      filter: drop-shadow(0 0 5px rgba(201, 169, 110, 0.55));
+    }
+    50% {
+      filter: drop-shadow(0 0 15px rgba(201, 169, 110, 0.95));
+    }
+  }
+
+  /* Thread Canvas Trail */
+  .thread-trail-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    pointer-events: none;
+  }
+}
+
+/* Fallback for touch devices */
+@media (pointer: coarse) {
+  .thread-cursor,
+  .thread-trail-canvas {
+    display: none !important;
+  }
+}
+
+/* ---------- Cloth Cut Page Transition Overlay Styling ---------- */
+.cloth-cut-transition {
+  position: fixed;
+  inset: 0;
+  z-index: 10005; /* Above navigation (1000) and custom cursor (10000) */
+  pointer-events: none;
+  display: none;
+}
+
+.cloth-cut-transition.active {
+  display: block;
+  pointer-events: auto;
+}
+
+/* Cloth Halves */
+.cloth-half {
+  position: absolute;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  background: var(--primary); /* Teal Green Cloth color */
+  transition: transform 0.45s cubic-bezier(0.85, 0, 0.15, 1);
+  will-change: transform;
+  overflow: hidden;
+}
+
+.cloth-half--left {
+  left: 0;
+  transform: translateX(-100%);
+  border-right: 1px solid rgba(253, 250, 246, 0.08);
+}
+
+.cloth-half--right {
+  right: 0;
+  transform: translateX(100%);
+  border-left: 1px solid rgba(253, 250, 246, 0.08);
+}
+
+/* Slide in to meet in center */
+.cloth-cut-transition.active .cloth-half--left,
+.cloth-cut-transition.active .cloth-half--right {
+  transform: translateX(0);
+}
+
+/* Split open after cut */
+.cloth-cut-transition.split .cloth-half--left {
+  transform: translateX(-100%);
+}
+
+.cloth-cut-transition.split .cloth-half--right {
+  transform: translateX(100%);
+}
+
+/* Linen/Cotton Cloth Texture Overlay */
+.cloth-texture {
+  position: absolute;
+  inset: 0;
+  opacity: 0.07;
+  background-image: 
+    linear-gradient(90deg, var(--white) 1px, transparent 1px),
+    linear-gradient(var(--white) 1px, transparent 1px);
+  background-size: 6px 6px;
+}
+
+/* The Seam / Cut Line */
+.cut-seam {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  width: 3px;
+  height: 100%;
+  background-image: linear-gradient(to bottom, var(--gold) 50%, transparent 50%);
+  background-size: 2px 14px;
+  opacity: 0;
+  transform: translateX(-50%);
+  transition: opacity 0.3s ease;
+  z-index: 10006;
+}
+
+.cloth-cut-transition.active .cut-seam {
+  opacity: 0.65;
+}
+
+.cloth-cut-transition.split .cut-seam {
+  opacity: 0;
+}
+
+/* The Snipping Scissors */
+.cut-scissors {
+  position: absolute;
+  left: 50%;
+  top: -100px;
+  transform: translate(-50%, -50%) rotate(90deg); /* Oriented pointing downwards */
+  opacity: 0;
+  z-index: 10007;
+  filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.35));
+}
+
+/* Trigger cut slide animation */
+.cloth-cut-transition.cutting .cut-scissors {
+  opacity: 1;
+  animation: slideDownCut 0.8s linear forwards;
+}
+
+.cloth-cut-transition.split .cut-scissors {
+  opacity: 0;
+}
+
+/* Scissors Blade Cutting Animation */
+.cloth-cut-transition.cutting .blade-left {
+  animation: transitionSnipLeft 0.14s ease-in-out infinite alternate;
+  transform-origin: 16px 16px;
+}
+
+.cloth-cut-transition.cutting .blade-right {
+  animation: transitionSnipRight 0.14s ease-in-out infinite alternate;
+  transform-origin: 16px 16px;
+}
+
+/* Keyframes for sliding scissors down */
+@keyframes slideDownCut {
+  0% {
+    top: -50px;
+  }
+  100% {
+    top: calc(100% + 50px);
+  }
+}
+
+/* Keyframes for fast cutting snips */
+@keyframes transitionSnipLeft {
+  0% { transform: rotate(-15deg); }
+  100% { transform: rotate(3deg); }
+}
+
+@keyframes transitionSnipRight {
+  0% { transform: rotate(15deg); }
+  100% { transform: rotate(-3deg); }
+}
+
+
