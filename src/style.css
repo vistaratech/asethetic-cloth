@@ -601,22 +601,42 @@ ul, ol {
   animation: spin 25s linear infinite;
 }
 
-.hero__logo-ring::before {
-  content: '';
-  position: absolute;
-  top: -4px;
-  left: 50%;
-  width: 8px;
-  height: 8px;
-  background: var(--primary);
-  border-radius: var(--radius-round);
-}
-
 .hero__logo-ring:nth-child(2) {
-  inset: -45px;
-  border-color: rgba(14, 107, 94, 0.06);
+  inset: -50px;
+  border-color: rgba(14, 107, 94, 0.07);
   animation-direction: reverse;
   animation-duration: 35s;
+}
+
+.hero__logo-ring:nth-child(3) {
+  inset: -80px;
+  border-color: rgba(14, 107, 94, 0.04);
+  animation-duration: 45s;
+}
+
+.hero__ring-icon {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--white);
+  border: 1px solid rgba(14, 107, 94, 0.15);
+  border-radius: var(--radius-round);
+  color: var(--primary);
+  box-shadow: 0 4px 10px rgba(14, 107, 94, 0.1);
+  padding: 5px;
+}
+
+.hero__ring-icon svg {
+  width: 100%;
+  height: 100%;
+  stroke: var(--primary);
+  display: block;
 }
 
 @keyframes spin {

@@ -199,8 +199,15 @@ function renderHero(): void {
       </div>
       <div class="hero__visual">
         <div class="hero__logo-wrapper">
-          <div class="hero__logo-ring"></div>
-          <div class="hero__logo-ring"></div>
+          <div class="hero__logo-ring">
+            <div class="hero__ring-icon" title="Scissors">${icons.scissors(12)}</div>
+          </div>
+          <div class="hero__logo-ring">
+            <div class="hero__ring-icon" title="Thread">${icons.thread(12)}</div>
+          </div>
+          <div class="hero__logo-ring">
+            <div class="hero__ring-icon" title="Needle">${icons.needle(12)}</div>
+          </div>
           <img src="/logo.png" alt="Aesthetic Cloth Boutique Logo" class="hero__logo-img" />
         </div>
       </div>
