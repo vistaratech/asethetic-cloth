@@ -7,6 +7,7 @@ import { initAllScrollAnimations } from './scroll-animations';
 // ========================================
 
 const INSTAGRAM_URL = 'https://www.instagram.com/aesthetic__cloth__/';
+const WHATSAPP_URL = 'https://wa.me/919361608127';
 
 // ---------- App Initialization ----------
 function initApp(): void {
@@ -481,7 +482,7 @@ function renderCTA(): void {
             <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener" class="btn-instagram" id="cta-instagram" data-magnetic>
               ${icons.instagram(18)} Follow on Instagram
             </a>
-            <a href="#" class="btn-whatsapp" id="cta-whatsapp" data-magnetic>
+            <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="btn-whatsapp" id="cta-whatsapp" data-magnetic>
               ${icons.messageCircle(18)} WhatsApp Us
             </a>
           </div>
@@ -528,7 +529,7 @@ function renderFooter(): void {
         <div>
           <h4 class="footer__heading">Connect</h4>
           <a href="${INSTAGRAM_URL}" target="_blank" class="footer__link footer__link--icon">${icons.instagram(14)} Instagram</a>
-          <a href="#" class="footer__link footer__link--icon">${icons.messageCircle(14)} WhatsApp</a>
+          <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="footer__link footer__link--icon">${icons.messageCircle(14)} WhatsApp</a>
           <a href="#" class="footer__link footer__link--icon">${icons.mail(14)} Email Us</a>
           <a href="#" class="footer__link footer__link--icon">${icons.mapPin(14)} Location</a>
         </div>
@@ -537,7 +538,7 @@ function renderFooter(): void {
         <p>&copy; ${new Date().getFullYear()} Aesthetic Cloth Boutique. All rights reserved.</p>
         <div class="footer__social">
           <a href="${INSTAGRAM_URL}" target="_blank" rel="noopener" class="footer__social-link" aria-label="Instagram">${icons.instagram(18)}</a>
-          <a href="#" class="footer__social-link" aria-label="WhatsApp">${icons.messageCircle(18)}</a>
+          <a href="${WHATSAPP_URL}" target="_blank" rel="noopener" class="footer__social-link" aria-label="WhatsApp">${icons.messageCircle(18)}</a>
           <a href="#" class="footer__social-link" aria-label="Facebook">${icons.facebook(18)}</a>
         </div>
       </div>
